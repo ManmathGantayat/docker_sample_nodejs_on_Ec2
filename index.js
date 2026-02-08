@@ -1,7 +1,10 @@
 var http = require('http');
 
-//create a server object:
+const PORT = 3000;
+
 http.createServer(function (req, res) {
-  res.write('Welcome to DevOps Training'); //write a response to the client
-  res.end(); //end the response
-}).listen(81); //the server object listens on port 80
+  res.write('Welcome to DevOps Training');
+  res.end();
+}).listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
